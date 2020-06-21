@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Contact me at eng.aliibrahim.96@outlook.com
+                    Contact us at areejsaleh@gmail.com or eng.aliibrahim.96@outlook.com
                 </div>
             </div>
         </div>
