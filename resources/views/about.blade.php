@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    I'm a master Student in It collage.
+                    we are master Students in It collage.
                 </div>
             </div>
         </div>
