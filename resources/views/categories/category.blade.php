@@ -10,7 +10,7 @@
 				</div>
 				<h1>{{$category->name}}</h1>
 				<ul class="post-meta">
-					<li><a href="author.html">John Doe</a></li>
+					<li><a href="author.html">A&A</a></li>
 					<li>{{$category->created_at->toFormattedDateString()}}</li>
 					<li><i class="fa fa-comments"></i> 3</li>
 					<li><i class="fa fa-eye"></i> 807</li>
@@ -42,7 +42,7 @@
 							</div>
 							<h3 class="post-title"><a href="{{route('post.show', ['slug' => $post->slug])}}">{{$post->updated_at->toFormattedDateString()}}</a></h3>
 							<ul class="post-meta">
-								<li><a href="author.html">John Doe</a></li>
+								<li><a href="author.html">A&A</a></li>
 								<li>{{$post->created_at->toFormattedDateString()}}</li>
 							</ul>
 							<p>{!!$post->content!!}</p>
@@ -99,11 +99,9 @@
 						</div>
 						<div class="category-widget">
 							<ul>
-								<li><a href="#">Lifestyle <span>451</span></a></li>
-								<li><a href="#">Fashion <span>230</span></a></li>
-								<li><a href="#">Technology <span>40</span></a></li>
-								<li><a href="#">Travel <span>38</span></a></li>
-								<li><a href="#">Health <span>24</span></a></li>
+                                @foreach ($categories as $cat )
+                            <li><a href="{{route('category.show', ['id' => $cat->id])}}">{{$cat->name}}<span>{{$cat->posts->count()}}</span></a></li>
+                                @endforeach
 							</ul>
 						</div>
 					</div>

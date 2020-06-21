@@ -17,7 +17,7 @@
 							</div>
 							<h3 class="post-title title-lg"><a href="#">{{$first_post->title}}</a></h3>
 							<ul class="post-meta">
-								<li><a href="#">A&A</a></li>
+								<li><a href="#">{{$first_post->user->name}}</a></li>
 								<li>{{$first_post->created_at->diffForHumans()}}</li>
 							</ul>
 						</div>
@@ -34,7 +34,7 @@
 							</div>
 							<h3 class="post-title"><a href="#">{{$second_post->title}}</a></h3>
 							<ul class="post-meta">
-								<li><a href="author.html">Ali</a></li>
+								<li><a href="author.html">{{$second_post->user->name}}</a></li>
 								<li>{{$second_post->created_at->diffForHumans()}}</li>
 							</ul>
 						</div>
@@ -50,7 +50,7 @@
 							</div>
 							<h3 class="post-title"><a href="#">{{$third_post->title}}</a></h3>
 							<ul class="post-meta">
-								<li><a href="author.html">Ali</a></li>
+							<li><a href="author.html">{{$third_post->user->name}}</a></li>
 								<li>{{$third_post->created_at->diffForHumans()}}</li>
 							</ul>
 						</div>
@@ -79,10 +79,7 @@
 							</div>
 						</div>
                         <!-- post -->
-                        @foreach ($posts as $post )
-                        @if ($counter==4)
-                        @break
-                        @endif
+                         @foreach ($posts as $post)
                         <div class="col-md-6">
 							<div class="post">
 								<a class="post-img" href="{{route('post.show',['slug'=>$post->slug])}}"><img src="{{$post->featrued}}" alt=""></a>
@@ -92,7 +89,7 @@
 									</div>
 									<h3 class="post-title"><a href="#">{{$post->title}}</a></h3>
 									<ul class="post-meta">
-										<li><a href="author.html">Ali</a></li>
+									<li><a href="author.html">{{$post->user->name}}</a></li>
 										<li>{{$post->created_at->diffForHumans()}}</li>
 									</ul>
 								</div>
@@ -127,7 +124,8 @@
                                         </div>
                                         <h3 class="post-title title-sm"><a href="#">{{$post->title}}</a></h3>
                                         <ul class="post-meta">
-                                            <li><a href="author.html">Ali</a></li>
+                                   {{--   --}}
+                                      <li><a href="author.html">{{$post->user->name}}</a></li> 
                                             <li>{{$post->created_at->diffForHumans()}}</li>
                                         </ul>
                                     </div>
@@ -160,7 +158,8 @@
                                         </div>
                                         <h3 class="post-title title-sm"><a href="#">{{$post->title}}</a></h3>
                                         <ul class="post-meta">
-                                            <li><a href="author.html">ALi</a></li>
+                                            {{--  --}}
+                                            <li><a href="author.html">{{$post->user->name}}</a></li>
                                             <li>{{$post->created_at->diffForHumans()}}</li>
                                         </ul>
                                     </div>
@@ -193,7 +192,8 @@
                                         </div>
                                         <h3 class="post-title title-sm"><a href="#">{{$post->title}}</a></h3>
                                         <ul class="post-meta">
-                                            <li><a href="author.html">Ali</a></li>
+                                            {{--  --}}
+                                            <li><a href="author.html">{{$post->user->name}}</a></li>
                                             <li>{{$post->created_at->diffForHumans()}}</li>
                                         </ul>
                                     </div>

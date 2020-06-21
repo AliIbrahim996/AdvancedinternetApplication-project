@@ -27,7 +27,7 @@
 							<ul>
 
                                     @foreach ($categories as $category)
-                                    <li><a href="#">{{$category->name}} <span>451</span></a></li>
+                                    <li><a href="{{route('category.show', ['id' => $category->id])}}">{{$category->name}} <span>{{$category->posts->count()}}</span></a></li>
                                     @endforeach
 
 
@@ -85,7 +85,7 @@ Copyright &copy;
 <script>document.write(new Date().getFullYear());</script>
 All rights reserved | This template is made with
 <i class="fa fa-heart-o" aria-hidden="true"></i> by
-<a href="" target="_blank">Ali</a>
+<a href="" target="_blank">A&A</a>
 
 					</div>
 				</div>

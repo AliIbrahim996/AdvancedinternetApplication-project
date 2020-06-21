@@ -73,7 +73,8 @@ class siteUIcontroller extends Controller
                             ->with('blog_name' , Setting::first()->blog_name)
                             ->with('settings',  Setting::first() )
                             ->with('name' , $category->name )
-                            ->with('category' , $category )    ;
+                            ->with('category' , $category )
+                            ->with('categories' , Category::take(5)->get() )    ;
 
     }
 
