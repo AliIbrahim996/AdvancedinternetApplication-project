@@ -14,52 +14,52 @@
                 <div class="card-header">Tags</div>
 
                 <div class="card-body">
- 
- 
+
+
                                     @if ($tags->count()>0)
-                                        
-                                    
+
+
                         <table class="table table-striped">
                                 <thead>
                                   <tr>
                                     <th scope="col"> No </th>
                                     <th scope="col"> Title </th>
-                                    
+
                                 <th scope="col">Edit</th>
                                     {{--      <th scope="col">Delete</th>  --}}
-                                    
+
                                   </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($tags as $tag)
                                     <tr>
-                                            <td> 
-                                           {{$tag->tag}} 
+                                            <td>
+                                           {{$tag->tag}}
                                            </td>
-                                            
-                                            <td> 
-                                              <a class="" href="{{route('tag.edit',['id' =>$tag->id ])}}">   
-                                                        <i class="fas fa-edit"></i>
-                                                   </a>  
+
+                                            <td>
+                                              <a class="btn btn-success" href="{{route('tag.edit',['id' =>$tag->id ])}}">
+                                                        Edit
+                                                   </a>
                                             </td>
-                                            <td> 
-                                            <a class="" href="{{route('tag.delete',['id' =>$tag->id ])}}">
-                                                    <i class="far fa-trash-alt"></i>
+                                            <td>
+                                            <a class="btn btn-danger" href="{{route('tag.delete',['id' =>$tag->id ])}}">
+                                                    Delete
                                             </a>
-                                           </td> 
+                                           </td>
                                           </tr>
                                     @endforeach
-                                 
+
                                     @else
-                                    <p scope="row" class="text-center">No  tags</p>  
+                                    <p scope="row" class="text-center">No  tags</p>
                                     @endif
                                 </tbody>
                               </table>
 
-                             
 
 
-                     
+
+
 
                 </div>
             </div>
