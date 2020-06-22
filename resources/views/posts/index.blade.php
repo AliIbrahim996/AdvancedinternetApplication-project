@@ -32,7 +32,8 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($posts as $post)
-                                    <tr>
+                                @if (Auth::user()==$post->user OR Auth::user()->admin)
+                                <tr>
                                             <th scope="row">
                                       <img src="{{$post->featrued}}" alt="{{$post->title}}" class="img-thumbnail" width="100px" height="100px">
 
@@ -51,6 +52,7 @@
                                             </a>
                                            </td>
                                           </tr>
+                                @endif
                                     @endforeach
 
                                     @else

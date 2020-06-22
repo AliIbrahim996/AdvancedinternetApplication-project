@@ -28,8 +28,7 @@ class ProfilesController extends Controller
            // return dd($id);
         }
 
-       
-        
+
         return view('users.profile')->with('user',Auth::user());
     }
 
@@ -85,19 +84,19 @@ class ProfilesController extends Controller
      */
     public function update(Request $request )
     {
-        
-        
+
+
 
         $this->validate($request,[
             "name"    => "required",
-            "email"  => "required|email" 
-            
-            
+            "email"  => "required|email"
+
+
         ]);
 
 
         $user = Auth::user();
-     
+
 
 
 
@@ -107,7 +106,7 @@ class ProfilesController extends Controller
             $avatar->move('uploads/avatar/',$avatar_new_name);
             $user->profile->avatar = 'uploads/avatar/'.$avatar_new_name;
            $user->profile->save();
-    
+
         }
 
         $user->name = $request->name;
@@ -120,10 +119,12 @@ class ProfilesController extends Controller
         $user->profile->save();
 
 
-        if ( $request->has('password')  ) {
-            
-           $user->password = bcrypt($request->password);
-           $user->save();
+        if ( $request->has('password') ) {
+            if(Auth::user()->password!=$request->password){
+                $user->password = bcrypt($request->password);
+                $user->save();
+            }
+
         }
         return redirect()->back();
 
