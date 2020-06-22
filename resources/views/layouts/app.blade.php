@@ -53,8 +53,8 @@
 
                             <a class="dropdown-item" href="{{route('users')}}">Users</a>
                             <a class="dropdown-item" href="{{route('users.create')}}">create user</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="">Edit</a>
+                          {{--<div class="dropdown-divider"></div>--}}
+                          {{-- <a class="dropdown-item" href="">Edit</a> --}}
                           </div>
                         </li>
 
@@ -71,8 +71,8 @@
 
                                 <a class="dropdown-item" href="{{route('settings')}}">Show</a>
 
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">Edit</a>
+                                {{--<div class="dropdown-divider"></div>--}}
+                                {{-- <a class="dropdown-item" href="">Edit</a> --}}
                               </div>
                             </li>
 
@@ -96,8 +96,8 @@
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('category.create')}}">Create</a>
                             <a class="dropdown-item" href="{{route('categories')}}">Categories</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="">Edit</a>
+                            {{--<div class="dropdown-divider"></div>--}}
+                            {{-- <a class="dropdown-item" href="">Edit</a> --}}
                           </div>
                         </li>
 
@@ -114,8 +114,8 @@
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('tag.create')}}">Create</a>
                                 <a class="dropdown-item" href="{{route('tags')}}">Tags</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">Edit</a>
+                                {{--<div class="dropdown-divider"></div>--}}
+                                {{-- <a class="dropdown-item" href="">Edit</a> --}}
                               </div>
                             </li>
 

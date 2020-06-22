@@ -12,10 +12,10 @@ class SettingsSeeder extends Seeder
     public function run()
     {
        \App\Setting::create([
-        'blog_name'=> 'Muhammed Blog' ,
-        'phone_number'=> '00 964 123 1234' ,
-        'blog_email'=> 'muhammed.essa@codeforiraq.org' ,
-        'address'=> 'IRAQ - Sulymaniyeh'  
+        'blog_name'=> 'A&A Blog' ,
+        'phone_number'=> '00996644' ,
+        'blog_email'=> 'a&a@test.com' ,
+        'address'=> 'Syria-lattakia'
        ]);
     }
 }
