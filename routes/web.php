@@ -106,7 +106,8 @@ Route::get('/contact', function () {
             ->with('settings',  App\Setting::first() )
             ->with('blog_name' , App\Setting::first()->blog_name)
             ->with('categories' , App\Category::take(5)->get() )
-            ->with('query' , request('search') )   ;
+            ->with('query' , request('search') )
+            ->with('tags' , App\Tag::take(12)->get() ) ;
 
         }) ;
 
