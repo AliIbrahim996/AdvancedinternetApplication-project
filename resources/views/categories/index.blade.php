@@ -31,13 +31,13 @@
                                     <tr>
                                             <th scope="row">{{$category->name}}</th>
                                             <td> 
-                                                <a class="" href="{{route('category.edit',['id' =>$category->id ])}}">
-                                                        <i class="fas fa-edit"></i>
+                                                <a class="btn btn-success" href="{{route('category.edit',['id' =>$category->id ])}}">
+                                                        Edit
                                                 </a>
                                             </td>
                                             <td> 
-                                            <a class="" href="{{route('category.delete',['id' =>$category->id ])}}">
-                                                    <i class="far fa-trash-alt"></i>
+                                            <a class="btn btn-danger" href="{{route('category.delete',['id' =>$category->id ])}}">
+                                                    Delete
                                             </a>
                                            </td> 
                                           </tr>

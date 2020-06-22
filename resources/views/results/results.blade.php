@@ -10,7 +10,7 @@
 				</div>
 				<h1> {{$query}}</h1>
 				<ul class="post-meta">
-					<li><a href="author.html">Ali</a></li>
+					<li><a href="author.html">A&A</a></li>
 
 					<li><i class="fa fa-comments"></i> 3</li>
 					<li><i class="fa fa-eye"></i> 807</li>
@@ -42,7 +42,7 @@
 							</div>
 							<h3 class="post-title"><a href="{{route('post.show', ['slug' => $post->slug])}}">{{$post->updated_at->toFormattedDateString()}}</a></h3>
 							<ul class="post-meta">
-								<li><a href="author.html">John Doe</a></li>
+								<li><a href="author.html">{{$post->user->name}}</a></li>
 								<li>{{$post->created_at->toFormattedDateString()}}</li>
 							</ul>
 							<p>{!!$post->content!!}</p>

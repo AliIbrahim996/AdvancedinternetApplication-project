@@ -42,7 +42,7 @@
 							</div>
 							<h3 class="post-title"><a href="{{route('post.show', ['slug' => $post->slug])}}">{{$post->updated_at->toFormattedDateString()}}</a></h3>
 							<ul class="post-meta">
-								<li><a href="author.html">A&A</a></li>
+								<li><a href="author.html">{{$post->user->name}}</a></li>
 								<li>{{$post->created_at->toFormattedDateString()}}</li>
 							</ul>
 							<p>{!!$post->content!!}</p>
@@ -54,9 +54,9 @@
 					@endforeach
 		 <br>
 
-					<div class="section-row loadmore text-center">
+					{{-- <div class="section-row loadmore text-center">
 						<a href="#" class="primary-button">Load More</a>
-					</div>
+					</div> --}}
 				</div>
 
 				<div class="col-md-4">
@@ -114,7 +114,7 @@
 						</div>
 						<div class="newsletter-widget">
 							<form>
-								<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
+								<p>Subscribe us</p>
 								<input class="input" name="newsletter" placeholder="Enter Your Email">
 								<button class="primary-button">Subscribe</button>
 							</form>

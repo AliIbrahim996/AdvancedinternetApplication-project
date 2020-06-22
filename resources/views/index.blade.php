@@ -98,13 +98,13 @@
                         <div class="clearfix visible-md visible-lg"></div>
                         @endforeach
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-md-8">
                             <div class="section-row loadmore text-center">
                                 <a href="#" class="primary-button">Load More</a>
                             </div>
 				        </div>
-                    </div>
+                    </div> --}}
 
 					<!-- row -->
 					<div class="row">
@@ -279,13 +279,13 @@
 					<!-- /newsletter widget -->
 
 					<!-- post widget -->
-					<div class="aside-widget">
+					{{-- <div class="aside-widget">
 						<div class="section-title">
 							<h2 class="title">Popular Posts</h2>
 						</div>
 
 					</div>
-					<!-- /post widget -->
+					<!-- /post widget --> --}}
 				</div>
 			</div>
 			<!-- /row -->
