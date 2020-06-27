@@ -69,8 +69,10 @@ class UsersController extends Controller
             'avatar' => 'uploads/avatar/1.png'
 
         ]);
+        $msg = 'Success! user created!';
 
-          return redirect()->route('users');
+        //$request->session()->flash('message', 'success! user created!.');
+          return redirect('/users')->withSuccess($msg);
     }
 
     /**
@@ -118,7 +120,8 @@ class UsersController extends Controller
         $user = User::find($id);
         $user->profile->delete($id);
         $user->delete();
-        return redirect()->route('users');
+        $msg = 'Success! user deleted!';
+        return redirect()->route('users')->withSuccess($msg);
     }
 
 
@@ -129,7 +132,9 @@ class UsersController extends Controller
         $user = User::find($id);
         $user->admin = 1;
         $user->save();
-        return redirect()->route('users');
+        $msg = 'Admin set successful!';
+        return redirect()->route('users')->withSuccess($msg);
+
     }
 
     public function notAdmin($id)
@@ -137,7 +142,9 @@ class UsersController extends Controller
         $user = User::find($id);
         $user->admin = 0;
         $user->save();
-        return redirect()->route('home');
+        $msg = 'revoke privilages success!';
+        return redirect()->route('users')->withSuccess($msg);
+
     }
 
 

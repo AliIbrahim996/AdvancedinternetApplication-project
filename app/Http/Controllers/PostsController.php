@@ -58,8 +58,7 @@ class PostsController extends Controller
             return redirect()->route('tag.create') ;
 
         }
-
-
+        
         return view('posts.create')->with('categories',$categories)
         ->with('tags',$tags);
     }
@@ -97,9 +96,9 @@ class PostsController extends Controller
         ]);
 
         $post->tags()->attach($request->tags);
+        $msg = $msg = 'Success! post created!';
 
-
-     return redirect()->route('posts');
+     return redirect()->route('posts')->withSuccess($msg);
 
    // dd($request->all());
     }
@@ -164,8 +163,8 @@ class PostsController extends Controller
         $post->save();
 
         $post->tags()->sync($request->tags);
-
-        return redirect()->route('posts');
+        $msg = 'Success! post updated!';
+        return redirect()->route('posts')->withSuccess($msg);
 
     }
 
@@ -179,7 +178,9 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $post->delete($id);
-        return redirect()->back();
+        $msg = 'Success! post deleted!';
+
+        return redirect()->back()->withSuccess($msg);
     }
 
 

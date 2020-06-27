@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Auth;
 use App\Profile;
+use Auth;
+use Illuminate\Http\Request;
+
 class ProfilesController extends Controller
 {
     /**
@@ -17,19 +18,18 @@ class ProfilesController extends Controller
 
         $user = Auth::user();
         $id = Auth::id();
-       // return dd($id);
-          if ($user->profile == null) {
+        // return dd($id);
+        if ($user->profile == null) {
 
-             $profile =  Profile::create([
-            'user_id' => $id,
-            'avatar' => 'uploads/avatar/1.png'
-             ]);
+            $profile = Profile::create([
+                'user_id' => $id,
+                'avatar' => 'uploads/avatar/1.png',
+            ]);
 
-           // return dd($id);
+            // return dd($id);
         }
 
-
-        return view('users.profile')->with('user',Auth::user());
+        return view('users.profile')->with('user', Auth::user());
     }
 
     /**
@@ -82,30 +82,23 @@ class ProfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request )
+    public function update(Request $request)
     {
 
-
-
-        $this->validate($request,[
-            "name"    => "required",
-            "email"  => "required|email"
-
+        $this->validate($request, [
+            "name" => "required",
+            "email" => "required|email",
 
         ]);
 
-
         $user = Auth::user();
 
-
-
-
-        if ( $request->hasFile('avatar')  ) {
+        if ($request->hasFile('avatar')) {
             $avatar = $request->avatar;
-            $avatar_new_name = time().$avatar->getClientOriginalName();
-            $avatar->move('uploads/avatar/',$avatar_new_name);
-            $user->profile->avatar = 'uploads/avatar/'.$avatar_new_name;
-           $user->profile->save();
+            $avatar_new_name = time() . $avatar->getClientOriginalName();
+            $avatar->move('uploads/avatar/', $avatar_new_name);
+            $user->profile->avatar = 'uploads/avatar/' . $avatar_new_name;
+            $user->profile->save();
 
         }
 
@@ -118,20 +111,17 @@ class ProfilesController extends Controller
         $user->save();
         $user->profile->save();
 
-
-        if ( $request->has('password') ) {
-            if(Auth::user()->password!=$request->password){
+        if ($request->has('password')) {
+            if (Auth::user()->password != $request->password) {
                 $user->password = bcrypt($request->password);
                 $user->save();
             }
 
         }
-        return redirect()->back();
+        $msg = $msg = 'Success! profile Updated!';
+        return redirect()->back()->withSuccess($msg);
 
     }
-
-
-
 
     /**
      * Remove the specified resource from storage.
